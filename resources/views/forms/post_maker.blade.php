@@ -5,7 +5,8 @@
 <h2 class="text-center text-dark font-italic mt-4">Create Post</h2>
 
 <form action="{{route('post_store')}}" method="post" class="centered login mt-5" enctype="multipart/form-data">
-@csrf
+ <input type="hidden" name="_token" value=" {{csrf_token()}} ">
+
 
 <label for="">Title:</label>
 <input type="text" name="title" id="" class="form-control w-50">

@@ -6,7 +6,9 @@
 
 <form action="{{route('update',$post)}}" method="post" class="centered login mt-5" enctype="multipart/form-data">
     @method('PUT')
-@csrf
+    <input type="hidden" name="_token" value=" {{csrf_token()}} ">
+    
+
 
 <label for="">Title:</label>
 <input type="text" name="title" id="" class="form-control w-50" value="{{$post->title}}">
