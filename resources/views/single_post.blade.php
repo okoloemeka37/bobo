@@ -124,7 +124,7 @@ if (sub) {
            
     let parent_real_id=$("#parent_real_id").val() 
          $.ajax({
-             url: "{{url('/comment')}}",
+             url: "https://app-0d3eca8e-2da3-4430-869e-7c3cf274cbb1.cleverapps.io/comment",
              type: "get",
              data: {
                  "_token": "{{csrf_token()}}",
@@ -166,7 +166,7 @@ $("#comment").trigger('reset');
 get_comment();
 function get_comment() {
  $.ajax({
-    url: "{{url('/getComment')}}",
+    url: "https://app-0d3eca8e-2da3-4430-869e-7c3cf274cbb1.cleverapps.io/getComment",
              type: "GET",
              data: {
                  "_token": "{{csrf_token()}}",
@@ -225,7 +225,7 @@ $(document).on('click','.Edit_comment',function(params) {
 let input=parent.querySelector(".comment_edit").value;
 let come_id=this.getAttribute("come_id");
 $.ajax({
-    url: "{{route('edit_comment')}}",
+    url: "https://app-0d3eca8e-2da3-4430-869e-7c3cf274cbb1.cleverapps.io/editComment",
              type: "GET",
              data: {
                  "_token": "{{csrf_token()}}",
