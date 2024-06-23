@@ -134,7 +134,7 @@
         let value = input.value;
    
         $.ajax({
-            url: "{{route('ds')}}",
+            url: "https://app-0d3eca8e-2da3-4430-869e-7c3cf274cbb1.cleverapps.io/life-search",
             type: "get",
             data: {
                 "_token": "{{csrf_token()}}",
