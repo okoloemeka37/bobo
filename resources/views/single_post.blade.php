@@ -44,7 +44,7 @@
 </div>
 
     </div>
-     <div class="blogs down d-flex mfl mr-5"> 
+     <div class="blogs down d-flex flex-column flex-md-row mfl mr-5"> 
       @foreach($downs as $down)
  <div class="ml-3 card shadow-lg p-4 mb-4 bg-white" style="width:250px;"> 
     <img src="{{asset($down->image)}}" width="20%"  class="card-img-top" style="height:15vh ;" alt="">
