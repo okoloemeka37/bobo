@@ -37,7 +37,7 @@
   <p>More To Read</p>
   @foreach ($sides as $side) 
     <div class="single_side mt-4">
-<p><a href="">{{$side->title}}</a></p>
+<p><a href="{{route('post_show',$side)}}">{{$side->title}}</a></p>
 
     </div>
 @endforeach
