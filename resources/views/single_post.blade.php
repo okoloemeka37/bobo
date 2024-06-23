@@ -69,7 +69,7 @@
 <p class="reply_to"></p>
 <span class="text-danger" id="cancel_reply">X</span>
 </div> 
-     <form class="comment-create" id="comment" method="POST" action="{{route('cs')}}">
+     <form class="comment-create" id="comment" method="POST" action="https://app-0d3eca8e-2da3-4430-869e-7c3cf274cbb1.cleverapps.io/comment">
       <input type="hidden" id="parent_id" value="0">
 <input type="text" name="user_name" class="form-control mb-2 w-50" id='name' placeholder="Name" @auth value="{{auth()->user()->name}}" @endauth >
 <input type="hidden" name="password" class="form-control mb-2 w-50" id='pass' placeholder="Name" value="password">
