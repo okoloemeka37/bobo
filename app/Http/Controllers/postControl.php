@@ -92,6 +92,7 @@ public function edit_form(post $post){
 
 public function update(Request $request,$post)
 {
+  echo $post;
   $plt=POST::find($post);
     $request->validate([
         'title'=>'required',
@@ -110,7 +111,7 @@ if ($request->image !=null) {
    'content'=>$request->content,
    'image'=>'files/'. $imageName
  ]);
- return redirect()->route('dashboard');
+ var_dump($plt);//return redirect()->route('dashboard');
 }
 
 //delete
