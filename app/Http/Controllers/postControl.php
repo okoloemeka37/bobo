@@ -90,8 +90,9 @@ public function edit_form(post $post){
 
 //update
 
-public function update(Request $request, post $post)
+public function update(Request $request,$post)
 {
+  $plt=POST::find($post);
     $request->validate([
         'title'=>'required',
         'content'=>'required',
@@ -104,7 +105,7 @@ if ($request->image !=null) {
 
                $path = $request->image->move(public_path('files/'), $imageName);    
 }
- $post->update([
+ $plt->update([
    'title'=>$request->title,
    'content'=>$request->content,
    'image'=>'files/'. $imageName
