@@ -33,7 +33,8 @@
         <li class="nav-item text-primary"><a href="{{route('dashboard')}}" class="nav-link">{{auth()->user()->name}}</a></li>
           
        <li class="nav-item text-primary">
-          <form action="{{route('logout')}}" method="post">
+          <form action="https://zylerblog.com.cleverapps.io/logout" method="post">
+            <meta name="csrf-token" content="{{ csrf_token() }}">
 
           <button class=" my-btn  text-primary">Logout</button>
           </form>    
