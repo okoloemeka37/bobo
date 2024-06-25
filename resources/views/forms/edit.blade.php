@@ -6,7 +6,7 @@
 
 <form action="{{route('update',$post)}}" method="post" class="centered login mt-5" enctype="multipart/form-data">
     @method('PUT')
-  
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
     
 
 

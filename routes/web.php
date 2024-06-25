@@ -49,7 +49,7 @@ Route::get('/user{user}',[comments_userControl::class,'user_activity'])->name('u
 Route::middleware('guest')->group(function()
 {
     Route::get('/login',[auth::class,'login_index'])->name('login.show');
-      Route::post('/login',[auth::class,'login_store'])->name('login.store');
+      Route::post('/loginPost',[auth::class,'login_store'])->name('login.store');
 
 });
 //blog page

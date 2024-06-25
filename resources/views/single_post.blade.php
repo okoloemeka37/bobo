@@ -69,7 +69,7 @@
 <p class="reply_to"></p>
 <span class="text-danger" id="cancel_reply">X</span>
 </div> 
-     <form class="comment-create" id="comment" method="POST" action="https://zylerblog.com.cleverapps.io//comment">
+     <form class="comment-create" id="comment" method="POST" action="http://zylerblog.com.cleverapps.io//comment">
       <input type="hidden" id="parent_id" value="0">
 <input type="text" name="user_name" class="form-control mb-2 w-50" id='name' placeholder="Name" @auth value="{{auth()->user()->name}}" @endauth >
 <input type="hidden" name="password" class="form-control mb-2 w-50" id='pass' placeholder="Name" value="password">
@@ -124,7 +124,7 @@ if (sub) {
            
     let parent_real_id=$("#parent_real_id").val() 
          $.ajax({
-             url: "https://zylerblog.com.cleverapps.io/comment",
+             url: "http://zylerblog.com.cleverapps.io/comment",
              type: "get",
              data: {
                  "_token": "{{csrf_token()}}",
@@ -166,7 +166,7 @@ $("#comment").trigger('reset');
 get_comment();
 function get_comment() {
  $.ajax({
-    url: "https://zylerblog.com.cleverapps.io/getComment",
+    url: "http://zylerblog.com.cleverapps.io/getComment",
              type: "GET",
              data: {
                  "_token": "{{csrf_token()}}",
