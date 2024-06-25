@@ -17,7 +17,7 @@
 <h2 class="btn btn-primary ">Personality Settings</h2>
    
          <form action="{{route('up_person')}}" method="post" enctype="multipart/form-data">
-@csrf
+
         <div> 
 
 <label for="">Name:</label>

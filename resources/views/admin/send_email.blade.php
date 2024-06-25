@@ -34,7 +34,7 @@ $count++ ?>
     <h2 class="text-center text-dark font-italic mt-4">Create Email</h2>
 
 <form action="{{route('send_email')}}" method="post" class="">
-@csrf
+
 <input type="hidden" name="id" id="hold_email">
 <label for="">Subject:</label>
 <input type="text" name="subject" id="" class="form-control w-100">
