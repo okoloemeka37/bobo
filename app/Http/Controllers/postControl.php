@@ -110,7 +110,7 @@ if ($request->image !=null) {
  $plt->update([
    'title'=>$request->title,
    'content'=>$request->content,
-   'image'=>'files/'. $imageName
+   'image'=>$imageName
  ]);
 return redirect()->route('dashboard');
 }
