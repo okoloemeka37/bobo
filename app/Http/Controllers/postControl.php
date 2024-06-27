@@ -112,7 +112,7 @@ if ($request->image !=null) {
    'content'=>$request->content,
    'image'=>'files/'. $imageName
  ]);
- var_dump($plt);//return redirect()->route('dashboard');
+return redirect()->route('dashboard');
 }
 
 //delete
