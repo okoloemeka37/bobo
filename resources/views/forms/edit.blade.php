@@ -8,22 +8,23 @@
     @method('PUT')
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-    
-    <div class="col-12 col-sm-6">
-      <input type="text" class="form-control" placeholder="Responsive Input">
+
+   
+      
   </div>
 
 
-
+ <div class="col-12 col-sm-6">
 <label for="">Title:</label>
-<input type="text" name="title" id="" class="form-control w-50" value="{{$post->title}}">
+<input type="text" name="title" id="" class="form-control" value="{{$post->title}}">
+</div>
 @error('title')
 <p class="text-danger">{{$message}}</p>
 @enderror 
+<div class="col-12 col-sm-6">
     <label for="" class="mt-5">Content</label>
-    <div class="content-area w-50">
-  <textarea name="content" id="" cols="20" rows="10" class="form-control w-50">{{$post->content}}</textarea>
-
+  <textarea name="content" id="" cols="20" rows="10" class="form-control">{{$post->content}}</textarea>
+</div>
   @error('content')
 <p class="text-danger">{{$message}}</p>
 @enderror
@@ -42,8 +43,10 @@
 @error('image')
 <p class="text-danger">{{$message}}</p>
 @enderror
- <br> 
+
+ <div class="col-12 col-sm-6">
     <button type="submit" class="btn btn-success w-50">Save</button>
+ </div>
 </form>
 
 <script>
