@@ -7,7 +7,12 @@
 <form action="http://zylerblog.com.cleverapps.io/admin/post/{{$post->id}}" method="post" class="centered login mt-5" enctype="multipart/form-data">
     @method('PUT')
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
     
+    <div class="col-12 col-sm-6">
+      <input type="text" class="form-control" placeholder="Responsive Input">
+  </div>
+
 
 
 <label for="">Title:</label>
