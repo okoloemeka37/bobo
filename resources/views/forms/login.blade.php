@@ -15,14 +15,14 @@
 
 <div class="col-12 col-sm-6">
     <label for="">Email:</label>
-    <input type="email" name="email" class="form-control w-50 @error('email') border border-danger @enderror" id="" value="{{old('email')}}">
+    <input type="email" name="email" class="form-control  @error('email') border border-danger @enderror" id="" value="{{old('email')}}">
      @error('email')
  <p class="text-danger">This Field Is Required</p>
   @enderror
 </div>
 <div class="col-12 col-sm-6">
     <label for="">Password</label>
-    <input type="password"class="form-control w-50 @error('password') border border-danger @enderror" name="password">
+    <input type="password"class="form-control @error('password') border border-danger @enderror" name="password">
     @error('password')
  <p> <p class="text-danger">Password Must Not Be Greater Than 8 Digit</p></p>
   @enderror
@@ -30,7 +30,7 @@
 </div>
  <input type="checkbox" name="remember" id="" checked >
  <label for="">remember me</label>
- 
+
  <div class="col-12 col-sm-6">
     <button type="submit" class="btn btn-primary">Login</button>
 </div>
