@@ -43,9 +43,8 @@ $request->validate([
     'image'=>['nullable','mimes:png,jpg,jpeg']
 ]);
   $imageName='' ;
-if ($request->image !=null) {
+if ($request->image != null) {
     $imageName = time() . '.' . $request->image->extension();
-                //remove image before upload
 
                $path = $request->image->move(public_path('files/'), $imageName);    
 }
@@ -99,12 +98,14 @@ public function update(Request $request,$post)
         'content'=>'required',
         'image'=>'nullable'
     ]);
-     $imageName='' ;
+    $imageName="";
 if ($request->image !=null) {
     $imageName = time() . '.' . $request->image->extension();
-                //remove image before upload
+          
 
                $path = $request->image->move(public_path('files/'), $imageName);    
+}else{
+  $imageName=$request->oldImage;
 }
  $plt->update([
    'title'=>$request->title,

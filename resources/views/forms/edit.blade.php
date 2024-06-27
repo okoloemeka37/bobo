@@ -24,6 +24,7 @@
 @enderror
 </div>
 
+<input type="hidden" name="oldImage" value="{{$post->image}}">
   <input type="file" name="image" id="" class="file hide"> <br>
 @if($post->image != null)
   <img src="{{asset($post->image)}}" alt="" class="show_img w-5 ">
