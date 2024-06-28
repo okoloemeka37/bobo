@@ -72,20 +72,27 @@
 </div>
      <form class="comment-create" id="comment" method="POST" action="http://zylerblog.com.cleverapps.io//comment">
       <input type="hidden" id="parent_id" value="0">
-<input type="text" name="user_name" class="form-control mb-2 w-50" id='name' placeholder="Name" @auth value="{{auth()->user()->name}}" @endauth >
-<input type="hidden" name="password" class="form-control mb-2 w-50" id='pass' placeholder="Name" value="password">
+
+      <div class="col-12 col-sm-6">
+<input type="text" name="user_name" class="form-control mb-2 " id='name' placeholder="Name" @auth value="{{auth()->user()->name}}" @endauth >
+      </div>
+<input type="hidden" name="password" class="form-control mb-2" id='pass' placeholder="Name" value="password">
 <input type="hidden" name="" id="parent_real_id"  value=0>
 <input type="hidden" id="fake_email" value=''>
 <p class="text-danger" id="nameErr"></p>
 
-<input type="email" name="email" id="email"  class="form-control mb-2 w-50" id="email" placeholder="Email"  @auth value="{{auth()->user()->email}}" @endauth>
+<div class="col-12 col-sm-6">
+<input type="email" name="email" id="email"  class="form-control mb-2 " id="email" placeholder="Email"  @auth value="{{auth()->user()->email}}" @endauth>
 
 <p class="text-danger" id="emailErr"></p>
+</div>
 
-<textarea name="comment" id="" cols="30" rows="5" class="form-control mb-2 w-50 user_comment"  placeholder="Comment"></textarea>
+<div class="col-12 col-sm-6">
+<textarea name="comment" id="" cols="30" rows="5" class="form-control mb-2 user_comment"  placeholder="Comment"></textarea>
 
 <p class="text-danger" id="commentErr"></p>
 
+</div>
 @auth
 @if(auth()->user()->sub ==='yes')
 
