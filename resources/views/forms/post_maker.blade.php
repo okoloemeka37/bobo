@@ -65,7 +65,6 @@ filebrowserUploadMethod: 'form'
           ListProperties,
           List,
           Image,
-
       } from 'ckeditor5';
   
       ClassicEditor
@@ -74,7 +73,7 @@ filebrowserUploadMethod: 'form'
               toolbar: {
                   items: [
                       'undo', 'redo', '|', 'bold', 'italic', '|',
-                      'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor','insertImage', 'bulletedList',
+                      'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor','imageUpload', 'bulletedList',
                        'numberedList'
                   ]
               },
