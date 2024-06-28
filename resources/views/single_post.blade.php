@@ -12,13 +12,13 @@
   <span class="float-right">{{$post->created_at->diffForHumans()}}</span>
 </div>
     
-    <img src="{{asset($post->image)}}"  class="card-img-top" style="height:40vh ;" alt="">
+    <img src="https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/$post->image}}"  class="card-img-top" style="height:40vh ;" alt="">
     <div class=" card-body">
       <h4 class="card-title text-center">{{$post->title}}</h4>
       <div class="card-text content">
     <?php echo $post->content ?></div>
 
-    <div class="fb-share-button" data-href="http://127.0.0.1:8000/post30" 
+    <div class="fb-share-button" data-href="http://zylerblog.com.cleverapps.io/{{$post->id}}" 
     data-layout="button" data-size="large">
     
       <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
@@ -47,7 +47,7 @@
      <div class="blogs down d-flex flex-column flex-md-row mfl mr-5"> 
       @foreach($downs as $down)
  <div class="ml-3 card shadow-lg p-4 mb-4 bg-white" style="width:250px;"> 
-    <img src="{{asset($down->image)}}" width="20%"  class="card-img-top" style="height:15vh ;" alt="">
+    <img src="https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/$down->image}}" width="20%"  class="card-img-top" style="height:15vh ;" alt="">
         <div class=" card-body">
       <h4 class="card-title"><a href="{{route('post_show',$down)}}">{{$down->title}}</a></h4>
       
