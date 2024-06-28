@@ -63,13 +63,14 @@ filebrowserUploadMethod: 'form'
           Font,
           Paragraph,
           ListProperties,
+          List,
           Image,
 
       } from 'ckeditor5';
   
       ClassicEditor
           .create( document.querySelector( '#content' ), {
-              plugins: [ Essentials, Bold, Italic, Font, Paragraph,ListProperties, Image],
+              plugins: [ Essentials, Bold, Italic, Font,List, Paragraph,ListProperties, Image],
               toolbar: {
                   items: [
                       'undo', 'redo', '|', 'bold', 'italic', '|',
