@@ -134,7 +134,7 @@
         let value = input.value;
 
         $.ajax({
-            url: "http://zylerblog.com.cleverapps.io//life-search",
+            url: "http://zylerblog.com.cleverapps.io/life-search",
             type: "get",
             data: {
                 "_token": "{{csrf_token()}}",

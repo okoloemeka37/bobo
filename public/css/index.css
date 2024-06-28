@@ -547,7 +547,7 @@ body {
     top: 48%;
     cursor: pointer;
     display: none;
-   
+
 }
 
 
@@ -779,7 +779,7 @@ body {
     height: 100px;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 600px) {
     /*blog style */
 #blog-page {
     margin-left: 2%;
@@ -880,5 +880,15 @@ body {
     }
     .to-comment {
         display: none;
+    }
+    body {
+        background-color: lightgreen;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    body {
+        background-color: lightgreen;
     }
 }
