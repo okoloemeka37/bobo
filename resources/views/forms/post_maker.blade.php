@@ -66,12 +66,11 @@ filebrowserUploadMethod: 'form'
   
       ClassicEditor
           .create( document.querySelector( '#content' ), {
-              plugins: [ Essentials, Bold, Italic, Font, Paragraph ],
+              plugins: [ Essentials, Bold, Italic, Font, Paragraph, Image, ImageToolbar, ImageCaption, ImageStyle, ImageResize, LinkImage ],
               toolbar: {
                   items: [
                       'undo', 'redo', '|', 'bold', 'italic', '|',
-                      'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'toggleImageCaption',
-                       'imageTextAlternative', 'ckboxImageEdit'
+                      'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor','insertImage'
                   ]
               }
           } )
