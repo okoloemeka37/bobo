@@ -40,59 +40,13 @@
 </form>
 
 
-       {{--   CKEDITOR.replace('content',{
+    
+         <script>
+        CKEDITOR.replace('content',{
 filebrowserUploadUrl: "{{route('ckeditor.upload', ['_token' => csrf_token() ])}}",
 filebrowserUploadMethod: 'form'
-         }) --}}
-
-         <script type="importmap">
-          {
-              "imports": {
-                  "ckeditor5": "https://cdn.ckeditor.com/ckeditor5/42.0.0/ckeditor5.js",
-                  "ckeditor5/": "https://cdn.ckeditor.com/ckeditor5/42.0.0/"
-              }
-          }
+         })
       </script>
 
- <script type="module">
-      import {
-          ClassicEditor,
-          Essentials,
-          Bold,
-          Italic,
-          Font,
-          Paragraph,
-          ListProperties,
-          List,
-          Image,
-    ImageCaption,
-    ImageResize,
-    ImageStyle,
-    ImageToolbar,
-    LinkImage
-      } from 'ckeditor5';
-  
-      ClassicEditor
-          .create( document.querySelector( '#content' ), {
-              plugins: [ Essentials, Bold, Italic, Font,List, Paragraph,ListProperties, Image, ImageToolbar, ImageCaption, ImageStyle, ImageResize, LinkImage],
-              toolbar: {
-                  items: [
-                      'undo', 'redo', '|', 'bold', 'italic', '|',
-                      'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'bulletedList',
-                       'numberedList','insertImage'
-                  ]
-              },
-              list: {
-            properties: {
-                styles: true,
-                startIndex: true,
-                reversed: true
-            }
-        } 
-          } )
-          .then( /* ... */ )
-          .catch( /* ... */ );
-  </script>
-  
 
 @endsection
