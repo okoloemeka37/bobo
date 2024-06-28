@@ -4,7 +4,7 @@
 
 
 
-<form action="https://zylerblog.com.cleverapps.io/loginPost" method="post" class="centered login mt-5">
+<form action="http://zylerblog.com.cleverapps.io/loginPost" method="post" class="centered login mt-5">
     
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 

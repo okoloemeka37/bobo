@@ -65,7 +65,7 @@ $c_p=post::create([
 'content'=>$request->content,
 
 'user_id'=>auth()->user()->id,
-'image'=>'files/'.$imageName
+'image'=>$imageName
 ]);
 
 //send mail to subcribers
