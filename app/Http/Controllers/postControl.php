@@ -152,7 +152,7 @@ $this->gitHubService->uploadFile($fileName,$content);
 
 $funcNum = $request->input('CKEditorFuncNum');
 
-$message = 'File uploaded successfully';
+$message = 'File misloaded successfully';
 
 
 $url= "https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/".$fileName; 
