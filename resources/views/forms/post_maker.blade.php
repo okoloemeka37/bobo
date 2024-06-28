@@ -65,16 +65,21 @@ filebrowserUploadMethod: 'form'
           ListProperties,
           List,
           Image,
+    ImageCaption,
+    ImageResize,
+    ImageStyle,
+    ImageToolbar,
+    LinkImage
       } from 'ckeditor5';
   
       ClassicEditor
           .create( document.querySelector( '#content' ), {
-              plugins: [ Essentials, Bold, Italic, Font,List, Paragraph,ListProperties, Image],
+              plugins: [ Essentials, Bold, Italic, Font,List, Paragraph,ListProperties, Image, ImageToolbar, ImageCaption, ImageStyle, ImageResize, LinkImage],
               toolbar: {
                   items: [
                       'undo', 'redo', '|', 'bold', 'italic', '|',
-                      'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor','image', 'bulletedList',
-                       'numberedList'
+                      'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'bulletedList',
+                       'numberedList','insertImage'
                   ]
               },
               list: {
