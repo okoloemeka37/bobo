@@ -153,8 +153,8 @@ $this->gitHubService->uploadFile($fileName,$content);
 $CKEditorFuncNum = $request->input('CKEditorFuncNum');
 $url = asset('files/'.$fileName);
 $response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url')</script>"; 
-//echo $response;
-var_dump($file);
+echo $response;
+
 }
 }
 

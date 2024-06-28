@@ -13,7 +13,7 @@
   <span class="float-right">{{$post->created_at->diffForHumans()}}</span>
 </div>
     
-    <img src="https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/$post->image}}"  class="card-img-top" style="height:40vh ;" alt="">
+    <img src="https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/{{$post->image}}"  class="card-img-top" style="height:40vh ;" alt="">
     <div class=" card-body">
       <h4 class="card-title text-center">{{$post->title}}</h4>
       <div class="card-text content">
