@@ -29,7 +29,7 @@
 <div class="user_items" id="email-page"><a href="{{route('email_user')}}" ><p>Email</p></a> </div>
 <div class="user_items" id="history-page"><a href="{{route('history.index')}}"><p>History</p></a> </div>
 <div class="user_items" id="users-page"><a href="{{route('user_index')}}"><p>Users</p></a> </div>
-<div class="user_items" id="gallery-page"><a href="{{route('gallery_index')}}"><p>Gallery</p></a> </div>
+
 
 
 <div class="user_items" id="settings-page"><a href="{{route('show_set')}}"><p>Settings</p></a> </div>
