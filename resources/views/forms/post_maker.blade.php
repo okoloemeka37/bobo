@@ -73,7 +73,7 @@ filebrowserUploadMethod: 'form'
               toolbar: {
                   items: [
                       'undo', 'redo', '|', 'bold', 'italic', '|',
-                      'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor','imageUpload', 'bulletedList',
+                      'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor','image', 'bulletedList',
                        'numberedList'
                   ]
               },
