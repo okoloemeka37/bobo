@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\GitHubService;
+use App\Services\GitHubServices;
 
 use App\Mail\post_mail;
 use App\Models\post;
