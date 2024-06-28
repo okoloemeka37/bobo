@@ -889,6 +889,31 @@ body {
 @media only screen and (max-width: 768px) {
 
     body {
-        background-color: lightgreen;
+        background-color: rgb(144, 182, 238);
+    }
+    .row_post{
+        display: none;
+    }
+     /*index page end*/
+    /*admin page start*/
+    .user_con {
+        display: block;
+    }
+    .profile {
+        width: 100%;
+    }
+    .history-post {
+        grid-template-columns: auto auto;
+    }
+    /*styles are done in individual admin pages end*/
+    /*single page*/
+    .single-more {
+        display: none;
+    }
+    .post_single {
+        width: 100%;
+    }
+    .to-comment {
+        display: none;
     }
 }
