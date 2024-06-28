@@ -18,7 +18,7 @@
     <div class="ml-3">
      <div class="m_p card  w-100  pl-3 pt-3 shadow-lg p-4 mb-4 bg-white">
     @if(strlen($post->image)>7)
-    <img src="https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/images/{{$post->image}}"  class="card-img-top" style="height:20vh ;" alt="">
+    <img src="https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/{{$post->image}}"  class="card-img-top" style="height:20vh ;" alt="">
     @else
 
     @endif
