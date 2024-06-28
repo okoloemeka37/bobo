@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\GitHubService;
+
 use App\Mail\post_mail;
 use App\Models\post;
 use App\Models\User;
@@ -9,8 +11,15 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
 
+
 class postControl extends Controller
 {
+  protected $gitHubService;
+
+    public function __construct(GitHubService $gitHubService)
+    {
+        $this->gitHubService = $gitHubService;
+    }
 
     /**
      * Display a listing of the resource.
@@ -99,11 +108,11 @@ public function update(Request $request,$post)
         'image'=>'nullable'
     ]);
     $imageName="";
-if ($request->image !=null) {
+if ($request->image != null) {
     $imageName = time() . '.' . $request->image->extension();
-          
-
-               $path = $request->image->move(public_path('files/'), $imageName);    
+          $file=$request->file('image');
+    $content = file_get_contents($file->getPathname());
+    $this->gitHubService->uploadFile($imageName,$content);
 }else{
   $imageName=$request->oldImage;
 }
