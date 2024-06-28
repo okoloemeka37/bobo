@@ -150,9 +150,11 @@ $file=$request->file('upload');
 $content = file_get_contents($file->getPathname());
 $this->gitHubService->uploadFile($fileName,$content);
 
-$CKEditorFuncNum = $request->input('CKEditorFuncNum');
-$url = asset('files/'.$fileName);
-$response = "https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/".$fileName; 
+$CKEditorFuncNum = $_GET['CKEditorFuncNum'];;
+
+$url= "https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/".$fileName; 
+
+echo "<script type='text/javascript'> window.parent.CKEDITOR.tools.callFunction($funcNum, '$url', '$message')</script>";
 
 
 }
