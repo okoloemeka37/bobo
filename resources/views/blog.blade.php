@@ -32,7 +32,7 @@
 
 @foreach($row_posts as $row)
      <div class=" row_posts" style=" border:none;"> 
-    <img src="{{asset($row->image)}}" class="card-img-top"style="height:20vh ;" alt="">
+    <img src="https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/{{$row->image}}" class="card-img-top"style="height:20vh ;" alt="">
     <div class=" card-body">
       <h4 class="card-title chg"><a href="{{route('post_show',$row)}}"> {{$row->title}}</a></h4>
 
@@ -55,7 +55,7 @@
 
  <div class="m_p  pl-3 pt-3">
 
- <img src="{{$post->image}}" class="m_p_img " height="200 "  alt="">
+ <img src="https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/{{$post->image}}" class="m_p_img " height="200 "  alt="">
 
 
  <span class="d-block pl-3">{{$post->created_at->format('M,d,Y')}}</span>
@@ -85,7 +85,7 @@
 @foreach($latest as $post)
 <div class="m_p w-75 pl-3 pt-3 d-flex w-100">
 <div class="w-50">
- <img src="{{$post->image}}" class="w-100" height="120"  alt="">
+ <img src="https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/{{$post->image}}" class="w-100" height="120"  alt="">
 </div>
 <div class="ml-4 mt-4">
  <span class="d-block ">{{$post->created_at->format('M,d,Y')}}</span>
