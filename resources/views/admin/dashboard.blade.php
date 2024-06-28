@@ -16,7 +16,7 @@
     <div class="grid-item ml-2">
 
     <div class="comment card shadow-lg p-4 mb-4 bg-white" style="width:300px;"> 
-    @if(strlen($post->image)>7)
+    @if(strlen($post->image) !== 0)
     <img src="https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/{{$post->image}}"  class="card-img-top" style="height:20vh ;" alt="">
     @else
 

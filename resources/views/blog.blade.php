@@ -17,8 +17,8 @@
  @foreach($f_posts as $post)
  <div class="board ">
 
- <picture class="blog_img" ><img src="{{$post->image}}"  height="300 "  alt="">
-  <p class="title h1 text-dark"><a href="{{route('post_show',$post)}}"> {{$post->title}}</a></p></picture>
+ <picture class="blog_img" ><img src="https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/{{$post->image}}"  height="300 "  alt="">
+  <p class="title h2 text-dark"><a href="{{route('post_show',$post)}}"> {{$post->title}}</a></p></picture>
 
 
 </div>
@@ -31,14 +31,14 @@
 
 
 @foreach($row_posts as $row)
-     <div class=" row_posts" style=" border:none;"> 
+     <div class=" row_posts" style=" border:none;">
     <img src="https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/{{$row->image}}" class="card-img-top"style="height:20vh ;" alt="">
     <div class=" card-body">
       <h4 class="card-title chg"><a href="{{route('post_show',$row)}}"> {{$row->title}}</a></h4>
 
          </div>
      </div>
- @endforeach 
+ @endforeach
 
 
 <div class="row_post">
@@ -53,7 +53,7 @@
     <div class="m_ps">
         @foreach($more_posts as $post)
 
- <div class="m_p  pl-3 pt-3">
+ <div class="m_p  pl-1 pt-3">
 
  <img src="https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/{{$post->image}}" class="m_p_img " height="200 "  alt="">
 
@@ -89,7 +89,7 @@
 </div>
 <div class="ml-4 mt-4">
  <span class="d-block ">{{$post->created_at->format('M,d,Y')}}</span>
- 
+
 <p class="h6 text-dark "><a class="" href="{{route('post_show',$post)}}">{{$post->title}}</a></p>
 </div>
 </div>
@@ -127,28 +127,28 @@
 
 
 </div>
-  <script src="{{asset('script/jquery.js')}}"></script> 
+  <script src="{{asset('script/jquery.js')}}"></script>
 <script>
    let input = document.querySelector("#life-search");
     input.addEventListener("input", function() {
         let value = input.value;
-   
+
         $.ajax({
-            url: "https://app-0d3eca8e-2da3-4430-869e-7c3cf274cbb1.cleverapps.io/life-search",
+            url: "http://zylerblog.com.cleverapps.io//life-search",
             type: "get",
             data: {
                 "_token": "{{csrf_token()}}",
                 input: value
             },
             success: function(response) {
-     
- $(".ans").empty();   
-        
 
- $(".ans").append(response)           
+ $(".ans").empty();
+
+
+ $(".ans").append(response)
 }
         })
-      
+
     })
 </script>
 @endsection

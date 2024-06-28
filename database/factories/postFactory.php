@@ -23,7 +23,8 @@ class PostFactory extends Factory
             'title' =>fake()->name(),
             'content' =>fake()->sentence(100),
             'user_id'=>1,
-            'image'=>'files/'.$img[$rand]
+            'image'=>$img[$rand],
+            
         ];
     }
 

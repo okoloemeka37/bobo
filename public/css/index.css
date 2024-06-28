@@ -781,6 +781,10 @@ body {
 
 @media screen and (max-width: 769px) {
     /*blog style */
+#blog-page {
+    margin-left: 2%;
+}
+
     .board {
         width: 150%;
     }
