@@ -150,7 +150,10 @@ $file=$request->file('upload');
 $content = file_get_contents($file->getPathname());
 $this->gitHubService->uploadFile($fileName,$content);
 
-$CKEditorFuncNum = $_GET['CKEditorFuncNum'];;
+$CKEditorFuncNum = $_GET['CKEditorFuncNum'];
+
+$message = 'File uploaded successfully';
+
 
 $url= "https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/".$fileName; 
 
