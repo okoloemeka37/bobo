@@ -54,8 +54,9 @@ $request->validate([
   $imageName='' ;
 if ($request->image != null) {
     $imageName = time() . '.' . $request->image->extension();
-
-               $path = $request->image->move(public_path('files/'), $imageName);    
+    $file=$request->file('image');
+    $content = file_get_contents($file->getPathname());
+    $this->gitHubService->uploadFile($imageName,$content);
 }
           
  
@@ -138,9 +139,14 @@ public function ck(Request $request)
 if($request->hasFile('upload')) {
 $originName = $request->file('upload')->getClientOriginalName();
 $fileName = pathinfo($originName, PATHINFO_FILENAME);
+
 $extension = $request->file('upload')->getClientOriginalExtension();
 $fileName = $fileName.'_'.time().'.'.$extension;
-$request->file('upload')->move(public_path('files'), $fileName);
+
+$file=$request->file('image');
+$content = file_get_contents($file->getPathname());
+$this->gitHubService->uploadFile($fileName,$content);
+
 $CKEditorFuncNum = $request->input('CKEditorFuncNum');
 $url = asset('files/'.$fileName);
 $response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url')</script>";
