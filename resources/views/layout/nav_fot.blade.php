@@ -20,7 +20,7 @@
 <body>
   <div class="d-flex justify-content-between sticky-top bg-light shadow-lg pl-1 pl-2 ">
    
-  <div class="mt-3"><a class="" href="{{route('blog_index')}}"><p>BoBo And Bae</p></a></div> 
+  <div class="mt-3"><a class="" href="{{route('blog_index')}}"><p>Zyler</p></a></div> 
     <ul class=" nav mt-1 show " id="nav">
         <li class="nav-item "><a href="{{route('about_show')}}" class="nav-link">About</a></li>
         <li class="nav-item text-primary"><a href="{{route('contact_show')}}" class="nav-link">Contact</a></li>
