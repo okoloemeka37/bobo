@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
         <link rel="stylesheet" href="{{asset('css/index.css')}}">
         <link rel="stylesheet" href="{{asset('css/foot.css')}}">
-        <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
+       
+
         <script src="{{asset('script/jquery.js')}}" defer></script> 
         <script src="{{asset('script/index.js')}}" defer></script>
         <script src="{{asset('script/simp.js')}}" defer></script>

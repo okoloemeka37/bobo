@@ -17,7 +17,7 @@
   </div>
 
   <div class="col-12 col-sm-6">
-  <textarea name="content" id="" cols="20" rows="10" class="form-control"></textarea>
+  <textarea name="content" id="content" cols="20" rows="10" class="form-control"></textarea>
   @error('content')
 <p class="text-danger">This Field Is Required</p>
 @enderror
@@ -39,10 +39,44 @@
 </div>
 </form>
 
-<script>
-         CKEDITOR.replace('content',{
+
+       {{--   CKEDITOR.replace('content',{
 filebrowserUploadUrl: "{{route('ckeditor.upload', ['_token' => csrf_token() ])}}",
 filebrowserUploadMethod: 'form'
-         })
-</script>
+         }) --}}
+
+         <script type="importmap">
+          {
+              "imports": {
+                  "ckeditor5": "https://cdn.ckeditor.com/ckeditor5/42.0.0/ckeditor5.js",
+                  "ckeditor5/": "https://cdn.ckeditor.com/ckeditor5/42.0.0/"
+              }
+          }
+      </script>
+
+ <script type="module">
+      import {
+          ClassicEditor,
+          Essentials,
+          Bold,
+          Italic,
+          Font,
+          Paragraph
+      } from 'ckeditor5';
+  
+      ClassicEditor
+          .create( document.querySelector( '#content' ), {
+              plugins: [ Essentials, Bold, Italic, Font, Paragraph ],
+              toolbar: {
+                  items: [
+                      'undo', 'redo', '|', 'bold', 'italic', '|',
+                      'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor'
+                  ]
+              }
+          } )
+          .then( /* ... */ )
+          .catch( /* ... */ );
+  </script>
+  
+
 @endsection
