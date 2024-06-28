@@ -897,14 +897,14 @@ body {
     }
 }
 
-@media only screen and (max-width: 830px) {
+@media only screen and (min-width: 601px) and (max-width: 830px) {
 
     body {
         background-color: rgb(144, 182, 238);
     }
 
 #blog_img{
-    width: 80%;
+    width: 70%;
 }
 
 .row_post{
@@ -938,5 +938,8 @@ body {
 
     .gnm{
         grid-template-columns: auto auto;
+    }
+    .blog_img{
+        width: 80%;
     }
 }
