@@ -70,7 +70,8 @@ filebrowserUploadMethod: 'form'
               toolbar: {
                   items: [
                       'undo', 'redo', '|', 'bold', 'italic', '|',
-                      'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor'
+                      'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'toggleImageCaption',
+                       'imageTextAlternative', 'ckboxImageEdit'
                   ]
               }
           } )
