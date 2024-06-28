@@ -16,7 +16,7 @@ class postControl extends Controller
 {
   protected $gitHubService;
 
-    public function __construct(GitHubService $gitHubService)
+    public function __construct(GitHubServices $gitHubService)
     {
         $this->gitHubService = $gitHubService;
     }
