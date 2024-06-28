@@ -43,7 +43,7 @@ Route::get("/deleteComment/{comment}",[get_commentControl::class,'del_comment'])
 //editing comment
 Route::get("/editComment",[get_commentControl::class,'edit_comment'])->name('edit_comment');
 
-Route::get('/boboandbabe/gallery',[photoControl::class,'index'])->name('gallery_index');
+
 
 Route::get('/user{user}',[comments_userControl::class,'user_activity'])->name('user_activity');
 Route::middleware('guest')->group(function()
@@ -108,14 +108,7 @@ Route::get('/admin/remove_user/{user}',[user_controller::class,'remove'])->name(
 
 Route::get('/admin/restore_user/{user}',[historyControl::class,'restore_user'])->name('restore_user');
 
-// gallery 
-Route::get('/boboandbabe/gallery',[photoControl::class,'up_form'])->name('up');
 
-Route::post("/boboandbabe/gallery/create",[photoControl::class,'upload'])->name('upload_img');
-
-Route::get('/boboandbabe/gallery',[photoControl::class,'index'])->name('gallery_index');
-
-Route::get('/boboandbabe/gallery/{gallery}',[photoControl::class,'delete'])->name('del_img');
 
 //send email to user
 Route::get('/boboandbabe/useremail',[sendEmailcontrol::class,'index'])->name('email_user');
