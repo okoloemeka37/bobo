@@ -4,7 +4,7 @@ namespace App\Services;
 
 use GuzzleHttp\Client;
 
-class GitHubService
+class GitHubServices
 {
     protected $client;
     protected $username;
