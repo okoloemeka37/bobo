@@ -152,7 +152,7 @@ $this->gitHubService->uploadFile($fileName,$content);
 
 $CKEditorFuncNum = $request->input('CKEditorFuncNum');
 $url = asset('files/'.$fileName);
-$response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url')</script>"; 
+$response = "https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/".$fileName; 
 echo $response;
 
 }

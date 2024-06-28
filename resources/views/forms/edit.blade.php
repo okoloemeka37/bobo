@@ -33,7 +33,7 @@
 <input type="hidden" name="oldImage" value="{{$post->image}}">
   <input type="file" name="image" id="" class="file hide"> <br>
 @if($post->image != null)
-  <img src="{{asset($post->image)}}" alt="" class="show_img w-5 ">
+  <img src="https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/{{$post->image}}" alt="" class="show_img w-5 ">
   @else 
    <img src="" alt="" class="show_img w-5 none">
    
