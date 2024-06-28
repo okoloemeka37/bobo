@@ -61,7 +61,14 @@ filebrowserUploadMethod: 'form'
           Bold,
           Italic,
           Font,
-          Paragraph
+          Paragraph,
+          ListProperties,
+          Image,
+    ImageCaption,
+    ImageResize,
+    ImageStyle,
+    ImageToolbar,
+    LinkImage
       } from 'ckeditor5';
   
       ClassicEditor
