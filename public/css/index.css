@@ -778,13 +778,24 @@ body {
     width: 100px;
     height: 100px;
 }
+.gnm{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
 
 @media screen and (max-width: 600px) {
     /*blog style */
 #blog-page {
     margin-left: 2%;
 }
-
+.gnm{
+    grid-template-columns: auto;
+}
+.mfl{
+    margin-left: 2%;
+    margin-right: 2%;
+}
     .board {
         width: 150%;
     }
@@ -886,16 +897,24 @@ body {
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 830px) {
 
     body {
         background-color: rgb(144, 182, 238);
     }
-    .row_post{
+
+#blog_img{
+    width: 80%;
+}
+
+.row_post{
         display: none;
     }
      /*index page end*/
     /*admin page start*/
+    .name{
+        width: 100%;
+    }
     .user_con {
         display: block;
     }
@@ -915,5 +934,9 @@ body {
     }
     .to-comment {
         display: none;
+    }
+
+    .gnm{
+        grid-template-columns: auto auto;
     }
 }

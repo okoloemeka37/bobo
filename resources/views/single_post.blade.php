@@ -12,19 +12,19 @@
   <span class="float-left">By Bobo An Babe</span>
   <span class="float-right">{{$post->created_at->diffForHumans()}}</span>
 </div>
-    
+
     <img src="https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/{{$post->image}}"  class="card-img-top" style="height:40vh ;" alt="">
     <div class=" card-body">
       <h4 class="card-title text-center">{{$post->title}}</h4>
       <div class="card-text content">
     <?php echo $post->content ?></div>
 
-    <div class="fb-share-button" data-href="http://zylerblog.com.cleverapps.io/{{$post->id}}" 
+    <div class="fb-share-button" data-href="http://zylerblog.com.cleverapps.io/{{$post->id}}"
     data-layout="button" data-size="large">
-    
+
       <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
        class="fb-xfbml-parse-ignore">Share</a></div>
-      
+
     </div>
 
     </div>
@@ -36,7 +36,7 @@
 
 <div class="single-more">
   <p>More To Read</p>
-  @foreach ($sides as $side) 
+  @foreach ($sides as $side)
     <div class="single_side mt-4">
 <p><a href="{{route('post_show',$side)}}">{{$side->title}}</a></p>
 
@@ -45,22 +45,22 @@
 </div>
 
     </div>
-     <div class="blogs down d-flex flex-column flex-md-row mfl mr-5"> 
+     <div class="blogs down gnm">
       @foreach($downs as $down)
- <div class="ml-3 card shadow-lg p-4 mb-4 bg-white" style="width:250px;"> 
+ <div class="ml-3 card shadow-lg p-4 mb-4 bg-white" style="width:250px;">
     <img src="https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/$down->image}}" width="20%"  class="card-img-top" style="height:15vh ;" alt="">
         <div class=" card-body">
       <h4 class="card-title"><a href="{{route('post_show',$down)}}">{{$down->title}}</a></h4>
-      
+
     </div>
-      
+
          </div>
      @endforeach
      </div>
 
      <div class="comments_section mt-3">
 <p class="display-4">Comments</p>
-   
+
 <div class="comments_holder w-50"></div>
 <p class="add">Add Comment</p>
 
@@ -69,7 +69,7 @@
 <div class="surt">
 <p class="reply_to"></p>
 <span class="text-danger" id="cancel_reply">X</span>
-</div> 
+</div>
      <form class="comment-create" id="comment" method="POST" action="http://zylerblog.com.cleverapps.io//comment">
       <input type="hidden" id="parent_id" value="0">
 <input type="text" name="user_name" class="form-control mb-2 w-50" id='name' placeholder="Name" @auth value="{{auth()->user()->name}}" @endauth >
@@ -89,10 +89,10 @@
 @auth
 @if(auth()->user()->sub ==='yes')
 
-<input type="checkbox" name="subscribe" id="sub" checked value="Subscribe">Subscribe For Our Daily Message 
+<input type="checkbox" name="subscribe" id="sub" checked value="Subscribe">Subscribe For Our Daily Message
 @else
 
-<input type="checkbox" name="subscribe" id="sub"  value="Subscribe">Subscribe For Our Daily Message 
+<input type="checkbox" name="subscribe" id="sub"  value="Subscribe">Subscribe For Our Daily Message
 @endif
 @endauth
 
@@ -106,11 +106,11 @@
 
      </div>
 @endsection
-        <script src="{{asset('script/jquery.js')}}"></script> 
+        <script src="{{asset('script/jquery.js')}}"></script>
 <script>
    $(document).ready(function() {
      $('#comment_btn').on('click', function(s) {
-        s.preventDefault() 
+        s.preventDefault()
          let sub=document.querySelector("#sub").checked
          console.log(sub)
 if (sub) {
@@ -122,8 +122,8 @@ if (sub) {
          let parent_id=$("#parent_id").val();
 
               let fake_email=$("#fake_email").val();
-           
-    let parent_real_id=$("#parent_real_id").val() 
+
+    let parent_real_id=$("#parent_real_id").val()
          $.ajax({
              url: "http://zylerblog.com.cleverapps.io/comment",
              type: "get",
@@ -143,7 +143,7 @@ fake_email:fake_email
 $("#comment").trigger('reset');
                 if (response == "Email Or Name Taken") {
               $("#u_message").show();
-                   $("#u_message").text(response);           
+                   $("#u_message").text(response);
                 }else{
              $("#u_message").hide();
         $(".comments_holder").html(response)
@@ -157,7 +157,7 @@ $("#comment").trigger('reset');
                     if(response.responseJSON.errors.user_name) $("#nameErr").text("This Field Is Required");
               if(response.responseJSON.errors.email)   $("#emailErr").text("Enter A Valid Email");
               if(response.responseJSON.errors.comment) $("#commentErr").text("This Field Is Required");
-     
+
              }
 
          })
@@ -171,15 +171,15 @@ function get_comment() {
              type: "GET",
              data: {
                  "_token": "{{csrf_token()}}",
-                
+
                  id:"{{$post->id}}",
-              
+
              },
              success:function(respo){
    $(".comments_holder").html(respo)
 
              }
- }) 
+ })
 }
 
 
@@ -193,7 +193,7 @@ let replies=$(document).on('click','.reply-btn',function(params) {
       $("#fake_email").val(this.getAttribute("to_email"));
 $('#parent_id').val(this.id)
     let real_id= this.getAttribute('user');
-        $('.surt').show() 
+        $('.surt').show()
 $(".reply_to").text('replying to '+this.getAttribute("to") +"...");
 
 $("#cancel_reply").show()
@@ -216,7 +216,7 @@ parent.querySelector(".comment-content").style.display="none"
 parent.querySelector(".comment_edit").style.display="block"
 
 parent.querySelector(".Edit_comment").style.display="block"
-parent.querySelector(".comment_edit").focus()   
+parent.querySelector(".comment_edit").focus()
 
 
 
@@ -232,7 +232,7 @@ $.ajax({
                  "_token": "{{csrf_token()}}",
                 id:come_id,
                  value:input,
-              
+
              },
              success:function(respo){
    parent.querySelector(".comment-content").style.display="block"
@@ -240,11 +240,11 @@ $.ajax({
 parent.querySelector(".comment_edit").style.display="none"
 parent.querySelector("#edit-btn").style.display="inline-block"
              }
- }) 
- 
+ })
+
 this.style.display="none"
    })
-   
+
 
  })
 </script>

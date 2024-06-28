@@ -4,7 +4,7 @@
 @section('main')
 
 <style>
-   @media screen and (max-width: 767px) {
+   @media screen and (max-width: 768px) {
     .index-post{
       display: none;
     }
@@ -12,10 +12,10 @@
 </style>
 
 <div class="index-post">
-@foreach ($posts as $post) 
+@foreach ($posts as $post)
     <div class="grid-item ml-2">
 
-    <div class="comment card shadow-lg p-4 mb-4 bg-white" style="width:300px;"> 
+    <div class="comment card shadow-lg p-4 mb-4 bg-white" style="width:300px;">
     @if(strlen($post->image) !== 0)
     <img src="https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/{{$post->image}}"  class="card-img-top" style="height:20vh ;" alt="">
     @else
@@ -33,11 +33,11 @@
     </form>
       </div>
       <p><a href="{{route('preview',$post)}}">{{$post->comment->count()}}  {{ Str::plural('comment',$post->comment->count()) }}</a> </p>
-      
+
     </div>
     </div>
 @endforeach
-      </div> 
+      </div>
 
 
 
