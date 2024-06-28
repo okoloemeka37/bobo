@@ -143,14 +143,16 @@ $fileName = pathinfo($originName, PATHINFO_FILENAME);
 $extension = $request->file('upload')->getClientOriginalExtension();
 $fileName = $fileName.'_'.time().'.'.$extension;
 
+
 $file=$request->file('image');
-$content = file_get_contents($file->getPathname());
+var_dump($file);
+/* $content = file_get_contents($file->getPathname());
 $this->gitHubService->uploadFile($fileName,$content);
 
 $CKEditorFuncNum = $request->input('CKEditorFuncNum');
 $url = asset('files/'.$fileName);
-$response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url')</script>";
-echo $response;
+$response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url')</script>"; */
+//echo $response;
 }
 }
 
