@@ -55,7 +55,7 @@
 
  <div class="m_p  pl-1 pt-3">
 
- <img src="https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/{{$post->image}}" class="m_p_img " height="200 "  alt="">
+ <img src="https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/{{$post->image}}" class="m_p_img "   alt="">
 
 
  <span class="d-block pl-3">{{$post->created_at->format('M,d,Y')}}</span>

@@ -9,10 +9,13 @@
   <form action="" method="post" class="check centered mb-5 mt-5">
  @csrf
 
+ <div class="col-12 col-sm-6">
+
      <label for="">Enter Email</label>
  <input type="email"class="form-control w-50 "  id="email" placeholder="Email" required>
 
  <p class="text-danger" id="email_err"></p>
+ </div>
 
   <button type="submit" class="btn btn-primary" id="email_check">Continue</button>
 </form>
@@ -37,9 +40,9 @@
 
     <label for="">Enter Token</label>
  <input type="text"class="form-control w-50 token" name="token">
-  
+
   <p class="text-danger " id="token_err"></p>
-  
+
 <input type="hidden" name="" class="email">
 
     <button type="submit" class="btn btn-primary mt-3" id="token_btn">Continue</button>
@@ -62,11 +65,11 @@
 
 
     <label for="">Enter New Password</label>
- <input type="password"class="form-control w-50 password" placeholder="Password"> 
+ <input type="password"class="form-control w-50 password" placeholder="Password">
 <label for="">Confirm Password</label>
-  <input type="password"class="form-control w-50 con_pass"  placeholder="Confirm password"> 
- 
- 
+  <input type="password"class="form-control w-50 con_pass"  placeholder="Confirm password">
+
+
   <p class="text-danger " id="change_err"></p>
 
 <input type="hidden" name="email" class="email">
@@ -77,40 +80,40 @@
 
 
 
-        <script src="{{asset('script/jquery.js')}}"></script> 
-<script> 
+        <script src="{{asset('script/jquery.js')}}"></script>
+<script>
 document.querySelector("#token_form").style.display="none"
 $('#email_check').on('click',function (e) {
- e.preventDefault() 
+ e.preventDefault()
 let email=$("#email").val()
 if (email.length !=0 ) {
-  
+
  $.ajax({
              url: "{{url('/check_email')}}",
              type: "get",
              data: {
                  "_token": "{{csrf_token()}}",
-                
+
                  email: email,
-              
+
              },
              success: function(response) {
  if (response == "Email Not Found") {
   $("#email_err").html(response)
 }else{
-$(".email").val(email) 
+$(".email").val(email)
 document.querySelector(".check_email").style.display="none"
 document.querySelector("#token_form").style.display="block"
 
 document.querySelector(".head").style.display="block"
-} 
-    
-             },
-            
+}
 
-         }) 
+             },
+
+
+         })
 }else{    $("#email_err").html("Enter Email")}
- 
+
          })
 
    $("#token_form").on('submit',function (e) {
@@ -118,30 +121,30 @@ document.querySelector(".head").style.display="block"
     let token=$(".token").val();
     let email=$(".email").val();
     if (token.length !=0) {
-      
+
 
    $.ajax({
              url: "{{url('/check_token')}}",
              type: "get",
              data: {
                  "_token": "{{csrf_token()}}",
-               token:token, 
+               token:token,
                  email: email,
-              
+
              },
            success:function(response){
-      
+
  if (response == "Invalid Token") {
   $("#token_err").html(response)
 }else{
- 
+
 document.querySelector(".check_email").style.display="none"
 document.querySelector("#token_form").style.display="none"
 
 document.querySelector(".head").style.display="none"
 
 document.querySelector(".c_pass").style.display="block"
-}  
+}
            }
    })
 
@@ -149,7 +152,7 @@ document.querySelector(".c_pass").style.display="block"
   $("#token_err").html("Enter Token")
     }
 
-   })      
+   })
 
 
 
@@ -180,23 +183,23 @@ let c_pass=$(".con_pass").val()
               password:password,
               password_confirm:c_pass,
                  email: email,
-              
+
              },
            success:function(response){
-      $("#change_err").show() 
+      $("#change_err").show()
 if(response !="not"){
        $("#change_err").text(response);
 }else{
-window.location.replace("/");   
-    
+window.location.replace("/");
+
 }
- 
+
            },
-            
+
    })
     }
 
-   })      
+   })
 
 
          </script>

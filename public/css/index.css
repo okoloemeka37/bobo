@@ -806,7 +806,8 @@ body {
         display: none;
     }
     .m_p_img {
-        width: 200px;
+        width: 150px;
+        height: 100px;
     }
     .m_ps {
         margin-right: 30px;
@@ -892,19 +893,15 @@ body {
     .to-comment {
         display: none;
     }
-    body {
-        background-color: lightgreen;
-    }
+
 }
 
 @media only screen and (min-width: 601px) and (max-width: 830px) {
 
-    body {
-        background-color: rgb(144, 182, 238);
-    }
+
 
 #blog_img{
-    width: 70%;
+    width: 100%;
 }
 
 .row_post{
@@ -941,5 +938,9 @@ body {
     }
     .blog_img{
         width: 80%;
+    }
+    .m_p_img {
+        width: 150px;
+        height: 200px;
     }
 }
