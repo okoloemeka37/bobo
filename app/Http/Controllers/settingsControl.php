@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\GitHubServices;
+
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,13 +14,22 @@ use Illuminate\Support\Facades\Redis;
 
 class settingsControl extends Controller
 {
+
+    protected $gitHubService;
+
+    public function __construct(GitHubServices $gitHubService)
+    {
+        $this->gitHubService = $gitHubService;
+    }
+
+
     public function index()
     {
         return view('admin.settings');
     }
     public function update_person(Request $request)
     {
-    
+
         $request->validate([
     'name'=>'required',
     'email'=>'required|email',
@@ -27,9 +38,10 @@ class settingsControl extends Controller
      $imageName='';
 if ($request->image !=null) {
     $imageName = time() . '.' . $request->image->extension();
-                //remove image before upload
 
-               $path = $request->image->move(public_path('files/'), $imageName);    
+               $file=$request->file('image');
+               $content = file_get_contents($file->getPathname());
+               $this->gitHubService->uploadFile($imageName,$content);
 }else {
     $imageName= $request->fake_img;
 }
@@ -63,11 +75,11 @@ if ($status) {
 
     }
 
-//forgot pass 
+//forgot pass
 
 public function forgot_show()
 {
-   
+
 
     return view('admin.forgotPassword');
 }
@@ -80,7 +92,7 @@ public function check_email(Request $request)
 $check=DB::select("SELECT * FROM users WHERE email = ? AND is_admin = ?",[$request->email,1]);
 if (count($check) != 0) {
  foreach ($check as $user) {
-  
+
   $token_arr=[];
    while (count($token_arr) != 5) {
     array_push($token_arr,rand(0,9));
@@ -91,7 +103,7 @@ if (count($check) != 0) {
 
     $data=['email'=>$email,'subject'=>"Your Pass Token Is ",'token'=>$token,];
         Mail::send('admin.emails.forgot_password',$data,function($message)use($data)        {
-        
+
             $message->to($data['email'])
             ->subject($data["subject"]);
             $message->from('okoloemeka37@gmail.com');
@@ -100,8 +112,8 @@ if (count($check) != 0) {
  }
 }else{
     echo "Email Not Found";
-   
-} 
+
+}
 }
 
 
@@ -118,7 +130,7 @@ Db::delete("DELETE FROM password_resets WHERE email = ? AND token =? ",[$email,$
 }else{
     echo "Invalid Token";
 }
- 
+
 }
 
 //new password
@@ -131,7 +143,7 @@ $c_pass=$request->password_confirm;
 if ($password != $c_pass) {
     echo "Passwords Do Not Match";
 }else {
-    
+
 
 $h_pass=Hash::make($password);
     $insert=DB::insert('UPDATE users SET  password= ? WHERE email = ?',[$h_pass,$email]);

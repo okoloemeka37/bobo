@@ -7,7 +7,7 @@
     }
 </style>
 <body class="">
- 
+
 
 
 
@@ -19,7 +19,7 @@
 
                 <h2>{{auth()->user()->name}}</h2>
                 <?php if (strlen(auth()->user()->image)>6) {?>
-              <div><img src="{{asset(auth()->user()->image)}}" class="rounded-circle same" alt=""></div>
+              <div><img src="https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/{{auth()->user()->image}}" class="rounded-circle same" alt=""></div>
                 <?php } ?>
                 <small>{{auth()->user()->email}}</small>
             </div>
@@ -34,10 +34,10 @@
 
 <div class="user_items" id="settings-page"><a href="{{route('show_set')}}"><p>Settings</p></a> </div>
 </div>
-       
+
 @yield('main')
-  
-     
+
+
     </div>
 
 
