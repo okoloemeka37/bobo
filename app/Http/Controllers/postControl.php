@@ -36,7 +36,7 @@ class postControl extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-  
+
 
     /**
      * Store a newly created resource in storage.
@@ -58,8 +58,8 @@ if ($request->image != null) {
     $content = file_get_contents($file->getPathname());
     $this->gitHubService->uploadFile($imageName,$content);
 }
-          
- 
+
+
 $c_p=post::create([
 'title'=>$request->title,
 'content'=>$request->content,
@@ -69,8 +69,18 @@ $c_p=post::create([
 ]);
 
 //send mail to subcribers
+$users=User::where("id",'!=',1)->get();
 
-$users=User::where("sub",'=','no')->get();
+foreach ($users as $user) {
+
+ $data=['email'=>$user->email,'name'=>$user->name,'topic'=>$request->title,'subject'=>"You Have A New Post To See",'body'=>$request->content,'id'=>$c_p->id];
+        Mail::send('admin.emails.post_tem',$data,function($message)use($data)        {
+
+            $message->to($data['email'])
+            ->subject($data["subject"]);
+            $message->from('okoloemeka37@gmail.com');
+        });
+}
 
  return redirect()->route('dashboard');
 }
@@ -155,7 +165,7 @@ $funcNum = $request->input('CKEditorFuncNum');
 $message = 'File misloaded successfully';
 
 
-$url= "https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/".$fileName; 
+$url= "https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/".$fileName;
 
 echo "<script type='text/javascript'> window.parent.CKEDITOR.tools.callFunction($funcNum, '$url', '$message')</script>";
 
