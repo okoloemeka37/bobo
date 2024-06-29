@@ -902,6 +902,11 @@ body {
 }
 
 @media only screen and (min-width: 601px) and (max-width: 830px) {
+    .centered {
+        margin-left: 5%;
+    }
+
+
 
     .comments_section {
         margin-left: 10%;
