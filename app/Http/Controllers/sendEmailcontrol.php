@@ -34,7 +34,7 @@ public function send_email(Request $request)
 
     }
 
-
+ return redirect()->route("email_user");
 
 }
 
