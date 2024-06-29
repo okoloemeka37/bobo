@@ -893,11 +893,22 @@ body {
     .to-comment {
         display: none;
     }
-
+    .comments_section {
+        margin-left: 10%;
+    }
+    .comment-content {
+        width: unset;
+    }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 830px) {
 
+    .comments_section {
+        margin-left: 10%;
+    }
+    .comment-content {
+        width: unset;
+    }
 
 
 #blog_img{
