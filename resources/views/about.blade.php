@@ -76,6 +76,7 @@ strong {
             </li>
             <li><strong>Password forgot and Reset:</strong>Admin can reset their password with ease by following the steps </li>
             <li><strong>History Page:</strong>You can the reverse the changes you made, like deleting a post and user </li>
+            <li><strong>History Page:</strong>You can see each user history</li>
 
 
         </ul>

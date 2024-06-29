@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    hi, <h1>BoBoAnd Babe</h1> 
+    hi, <h1>Zyler</h1>
 
 <p><?php echo $body?></p>
 
