@@ -12,8 +12,10 @@
   <span class="float-left">By Bobo An Babe</span>
   <span class="float-right">{{$post->created_at->diffForHumans()}}</span>
 </div>
-
+@if(strlen($post->image) !== 0)
     <img src="https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/{{$post->image}}"  class="card-img-top" style="height:40vh ;" alt="">
+   @endif
+
     <div class=" card-body">
       <h4 class="card-title text-center">{{$post->title}}</h4>
       <div class="card-text content">
@@ -48,7 +50,7 @@
      <div class="blogs down gnm">
       @foreach($downs as $down)
  <div class="ml-3 card shadow-lg p-4 mb-4 bg-white" style="width:250px;">
-    <img src="https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/$down->image}}" width="20%"  class="card-img-top" style="height:15vh ;" alt="">
+    <img src="https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/{{$down->image}}" width="20%"  class="card-img-top" style="height:15vh ;" alt="">
         <div class=" card-body">
       <h4 class="card-title"><a href="{{route('post_show',$down)}}">{{$down->title}}</a></h4>
 
