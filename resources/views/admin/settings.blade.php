@@ -16,7 +16,7 @@
 
 <h2 class="btn btn-primary ">Personality Settings</h2>
 
-         <form action="http://zylerblog.com.cleverapps.io/boboandbabe/update_person}}" method="post" enctype="multipart/form-data">
+         <form action="http://zylerblog.com.cleverapps.io/boboandbabe/update_person" method="post" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div>
             <div class="col-12 col-sm-6">
@@ -56,7 +56,7 @@
       @endif
 
 <div class="change_pass play">
-   <form action="http://zylerblog.com.cleverapps.io/{{up_password}}" method="post">
+   <form action="http://zylerblog.com.cleverapps.io/boboandbabe/update_password" method="post">
 
 
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -71,14 +71,14 @@
 
     <div class="col-12 col-sm-6">
       <label for="">Enter New Password</label>
-      <input type="password" name="password" id="" class="form-control w-75"  placeholder="New Password">
+      <input type="password" name="password" id="" class="form-control "  placeholder="New Password">
       @error('password')
          <p class="text-danger">Password Must Be Greater Than 8 Character</p>
 @enderror
     </div>
     <div class="col-12 col-sm-6">
 <label for="">Confirm Password</label>
-  <input type="password" name="password_confirmation" id="" class="form-control w-75"  placeholder="Confirm Password">
+  <input type="password" name="password_confirmation" id="" class="form-control "  placeholder="Confirm Password">
       @error('password')
          <p class="text-danger">Password And Confirm Password Do Not Match</p>
 @enderror
