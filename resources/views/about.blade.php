@@ -65,14 +65,19 @@ strong {
             <li><strong>Image Sliders:</strong> Attractive image sliders are integrated for better visual appeal and content engagement.</li>
             <li><strong>Live Search:</strong> A live search functionality allows users to find posts quickly and efficiently.</li>
             <li><strong>Admin Panel:</strong> A robust admin panel enables administrators to add, remove, and edit posts with ease.</li>
-           
+
             <li><strong>Email Notifications:</strong>
                 <ul>
                     <li>When a comment is made, the post owner receives an email notification.</li>
                     <li>When a reply is made, the original comment owner is notified via email.</li>
                     <li>Whenever a new post is published, subscribers automatically receive an email notification.</li>
+                    <li>Admin can send mail to any user or all user at once </li>
                 </ul>
             </li>
+            <li><strong>Password forgot and Reset:</strong>Admin can reset their password with ease by following the steps </li>
+            <li><strong>History Page:</strong>You can the reverse the changes you made, like deleting a post and user </li>
+
+
         </ul>
         <p>This Laravel blog site combines user interactivity, ease of management, and efficient communication to deliver an optimal blogging experience.</p>
     </div>
