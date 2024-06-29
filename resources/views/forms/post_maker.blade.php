@@ -4,7 +4,7 @@
 
 <h2 class="text-center text-dark font-italic mt-4">Create Post</h2>
 
-<form action="http://zylerblog.com.cleverapps.io/admin/create_post" method="post" class="centered login mt-5" enctype="multipart/form-data">
+<form action="https://app-37c9113d-6af0-447c-b7e8-acf4bdb4aaa1.cleverapps.io/admin/create_post" method="post" class="centered login mt-5" enctype="multipart/form-data">
   <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 
@@ -13,7 +13,7 @@
 <input type="text" name="title" id="" class="form-control">
 @error('title')
 <p class="text-danger">This Field Is Required</p>
-@enderror 
+@enderror
   </div>
 
   <div class="col-12 col-sm-6">
@@ -40,7 +40,7 @@
 </form>
 
 
-    
+
          <script>
         CKEDITOR.replace('content',{
 filebrowserUploadUrl: "{{route('ckeditor.upload', ['_token' => csrf_token() ])}}",

@@ -72,7 +72,7 @@
 <p class="reply_to"></p>
 <span class="text-danger" id="cancel_reply">X</span>
 </div>
-     <form class="comment-create" id="comment" method="POST" action="http://zylerblog.com.cleverapps.io//comment">
+     <form class="comment-create" id="comment" method="POST" action="https://app-37c9113d-6af0-447c-b7e8-acf4bdb4aaa1.cleverapps.io/comment">
       <input type="hidden" id="parent_id" value="0">
 
       <div class="col-12 col-sm-6">
@@ -134,7 +134,7 @@ if (sub) {
 
     let parent_real_id=$("#parent_real_id").val()
          $.ajax({
-             url: "http://zylerblog.com.cleverapps.io/comment",
+             url: "https://app-37c9113d-6af0-447c-b7e8-acf4bdb4aaa1.cleverapps.io/comment",
              type: "get",
              data: {
                  "_token": "{{csrf_token()}}",
@@ -176,7 +176,7 @@ $("#comment").trigger('reset');
 get_comment();
 function get_comment() {
  $.ajax({
-    url: "http://zylerblog.com.cleverapps.io/getComment",
+    url: "https://app-37c9113d-6af0-447c-b7e8-acf4bdb4aaa1.cleverapps.io/getComment",
              type: "GET",
              data: {
                  "_token": "{{csrf_token()}}",
@@ -235,7 +235,7 @@ $(document).on('click','.Edit_comment',function(params) {
 let input=parent.querySelector(".comment_edit").value;
 let come_id=this.getAttribute("come_id");
 $.ajax({
-    url: "https://zylerblog.com.cleverapps.io/editComment",
+    url: "https://app-37c9113d-6af0-447c-b7e8-acf4bdb4aaa1.cleverapps.io/editComment",
              type: "GET",
              data: {
                  "_token": "{{csrf_token()}}",

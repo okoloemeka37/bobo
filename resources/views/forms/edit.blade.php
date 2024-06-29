@@ -4,7 +4,7 @@
 
 <h2 class="text-center text-dark font-italic mt-4">Editing Post {{$post->title}}</h2>
 
-<form action="http://zylerblog.com.cleverapps.io/admin/post/{{$post->id}}" method="post" class="centered login mt-2" enctype="multipart/form-data">
+<form action="https://app-37c9113d-6af0-447c-b7e8-acf4bdb4aaa1.cleverapps.io/admin/post/{{$post->id}}" method="post" class="centered login mt-2" enctype="multipart/form-data">
   @method('PUT')
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 

@@ -16,7 +16,7 @@
 
 <h2 class="btn btn-primary ">Personality Settings</h2>
 
-         <form action="http://zylerblog.com.cleverapps.io/boboandbabe/update_person" method="post" enctype="multipart/form-data">
+         <form action="https://app-37c9113d-6af0-447c-b7e8-acf4bdb4aaa1.cleverapps.io/boboandbabe/update_person" method="post" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div>
             <div class="col-12 col-sm-6">
@@ -56,7 +56,7 @@
       @endif
 
 <div class="change_pass play">
-   <form action="http://zylerblog.com.cleverapps.io/boboandbabe/update_password" method="post">
+   <form action="https://app-37c9113d-6af0-447c-b7e8-acf4bdb4aaa1.cleverapps.io/boboandbabe/update_password" method="post">
 
 
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
