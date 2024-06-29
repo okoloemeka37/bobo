@@ -5,12 +5,12 @@
 <h2 class="text-center text-dark font-italic mt-4">Editing Post {{$post->title}}</h2>
 
 <form action="http://zylerblog.com.cleverapps.io/admin/post/{{$post->id}}" method="post" class="centered login mt-2" enctype="multipart/form-data">
-    @method('PUT')
+  @method('PUT')
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 
-   
-      
+
+
   </div>
 
 
@@ -20,7 +20,7 @@
 </div>
 @error('title')
 <p class="text-danger">{{$message}}</p>
-@enderror 
+@enderror
 <div class="col-12 col-sm-6">
     <label for="" class="mt-5">Content</label>
   <textarea name="content" id="" cols="20" rows="10" class="form-control">{{$post->content}}</textarea>
@@ -34,9 +34,9 @@
   <input type="file" name="image" id="" class="file hide"> <br>
 @if($post->image != null)
   <img src="https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/{{$post->image}}" alt="" class="show_img w-5 ">
-  @else 
+  @else
    <img src="" alt="" class="show_img w-5 none">
-   
+
   @endif
   <br>
 <p class="btn btn-primary" id="fake-btn">Upload Image</p>
