@@ -4,7 +4,7 @@
 
 
 
-<form action="{{route('login.store')}}" method="post" class="centered login mt-5">
+<form action="https://app-37c9113d-6af0-447c-b7e8-acf4bdb4aaa1.cleverapps.io/loginPost" method="post" class="centered login mt-5">
 
     @csrf
 
