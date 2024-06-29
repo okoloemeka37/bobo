@@ -18,7 +18,7 @@
             <div class="name">
 
                 <h2>{{auth()->user()->name}}</h2>
-                <?php if (strlen(auth()->user()->image)>6) {?>
+                <?php if (strlen(auth()->user()->image) !=0 ) {?>
               <div><img src="https://raw.githubusercontent.com/okoloemeka37/ImageHolder/main/{{auth()->user()->image}}" class="rounded-circle same" alt=""></div>
                 <?php } ?>
                 <small>{{auth()->user()->email}}</small>

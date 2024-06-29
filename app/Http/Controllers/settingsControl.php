@@ -49,7 +49,7 @@ if ($request->image !=null) {
         User::where('is_admin','=',true)->update([
 'name'=>$request->name,
 'email'=>$request->email,
-'image'=>"files/".$imageName
+'image'=>$imageName
         ]);
         return redirect()->route('show_set');
     }
