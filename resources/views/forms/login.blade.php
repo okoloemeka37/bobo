@@ -6,7 +6,7 @@
 
 <form action="{{route('login.store')}}" method="post" class="centered login mt-5">
 
-    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+    @csrf
 
 @if(session('status'))
 <div class="btn btn-danger w-50">{{session('status')}}</div>
